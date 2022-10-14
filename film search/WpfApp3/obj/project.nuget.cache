@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QXR48cxKsMLLCuH8699rn2an86+SVTAXA+XCpDTm9sjTr2SVJqDf2ieY2Ud4M+xpUaGluLwFDENxsFR8Rk3NTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\UserTul\\source\\repos\\WpfApp3\\WpfApp3\\WpfApp3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\UserTul\\.nuget\\packages\\materialdesigncolors\\2.0.9\\materialdesigncolors.2.0.9.nupkg.sha512",
+    "C:\\Users\\UserTul\\.nuget\\packages\\materialdesignthemes\\4.6.1\\materialdesignthemes.4.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}
