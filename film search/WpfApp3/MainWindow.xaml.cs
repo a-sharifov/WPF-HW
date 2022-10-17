@@ -20,9 +20,21 @@ namespace WpfApp3
             InitializeComponent();
         }
 
-        private async void search_button_Click(object sender, RoutedEventArgs e)
+        private void search_button_Click(object sender, RoutedEventArgs e)
+        {
+            Search_Title();
+        }
+
+        private void search_box_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+                Search_Title();
+        }
+
+        private async void Search_Title()
         {
             string ResultSearch = await FilmSearchDownoloadService.FindFilm(search_box.Text);
+
             var titlesearch = DeserializeFilmSearchService.deserializeFilmInfo(ResultSearch);
             if (titlesearch != null)
             {
@@ -31,15 +43,10 @@ namespace WpfApp3
                 plot_text.Text = titlesearch.Plot;
                 actors_text.Text = titlesearch.Actors;
                 genre_text.Text = titlesearch.Genre;
-                if (titlesearch.Poster != null)
-                {
-                    using WebClient client = new WebClient();
-                    var downoloadPicture = client.DownloadData(new Uri(titlesearch.Poster)); // возможная причина ошибки
-                    //MemoryStream memoryStream = new MemoryStream(downoloadPicture);
-                    //title_image.Source = ;
-                }
+                if (titlesearch.Poster != null) title_image.Source = new BitmapImage(new Uri(titlesearch.Poster));
             }
             search_box.Text = "";
         }
+
     }
 }

@@ -16,7 +16,7 @@
         Title="Film Search" Height="450" Width="800" 
         ResizeMode="NoResize">
     
-    <Grid Margin="0,-2,0,2">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.10*"/>
             <RowDefinition/>
@@ -35,7 +35,7 @@
             <Button Name="search_button" Grid.Column="1" Click="search_button_Click" Margin="15 5 15 0">
                 <mD:PackIcon Kind="Search" ></mD:PackIcon>
             </Button>
-            <TextBox Name="search_box"  Grid.Column="0" FontSize="22" MaxLength="30"/>
+            <TextBox Name="search_box"  Grid.Column="0" FontSize="22" MaxLength="30" KeyDown="search_box_KeyDown"/>
         </Grid>
 
         <Grid Grid.Column="0" Grid.Row="1">
@@ -44,7 +44,7 @@
                 <RowDefinition Height="0.25*"></RowDefinition>
             </Grid.RowDefinitions>
             <Image Name= "title_image" Grid.Row="0" Margin="25 5 25 5"/>
-            <TextBlock Name="title_name_text" TextAlignment="Center" FontSize="18" Grid.Row="1" Margin="10 10 10 20"/>
+            <TextBlock Name="title_name_text" TextAlignment="Center" FontSize="18" Grid.Row="1" Margin="10 10 10 20" FontWeight="Bold"/>
         </Grid>
 
         <TabControl Grid.Column="1" Grid.Row="1" Margin="0 15 15 15">
@@ -59,7 +59,7 @@
             </TabItem>
         </TabControl>
 
-        <TextBlock Name="ratings_title_box" Grid.Column="0" Grid.Row="0" Margin="35 10 35 0" FontSize="18" TextAlignment="Center" ></TextBlock>
+        <TextBlock Name="ratings_title_box" Grid.Column="0" Grid.Row="0" Margin="35 10 35 0" FontSize="18" TextAlignment="Center" FontWeight="Bold" ></TextBlock>
         
     </Grid>
 </Window>
